@@ -54,6 +54,30 @@ const deleteBtnCreator = () => {
     return deleteBtn;
 }
 
+// EDIT BUTTON
+
+const editBtnCreator = () => {
+    const editBtn = document.createElement('button');
+
+    editBtn.textContent = "Edit";
+    editBtn.className = "delete-btn";
+
+    editBtn.addEventListener('click', (e)=>{
+        const currentValue = e.target.parentElement.childNodes[0].data;
+        input.value = currentValue
+
+        const item = e.target.parentElement;
+        ol.removeChild(item);
+
+        const items = document.querySelectorAll('li');
+
+        if(items.length === 0){
+            empty.style.display = "block"
+        }
+    });
+    return editBtn;
+}
+
 // CLICK EVENT FOR SUBMITING A NEW ITEM IN A TO DO LIST
 
 addBtn.addEventListener("click", (e) => {
@@ -66,6 +90,7 @@ addBtn.addEventListener("click", (e) => {
     // FIND THIS NEW LI AND CHANGE THE INNER HTML TO MATCH WHAT WE HAVE IN THE INPUT FIELD 
     li.innerHTML = input.value
     li.appendChild(deleteBtnCreator())
+    li.appendChild(editBtnCreator())
 
     // FIND THE ORDERED LIST AND APPEND THE NEW LI WE CREATED 
     ol.appendChild(li)
