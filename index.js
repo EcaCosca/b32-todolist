@@ -33,6 +33,26 @@ const markAsDone = (e) => {
     !e.style.backgroundColor ? e.style.backgroundColor = 'red' : e.style.backgroundColor = '' 
 }
 
+// DELETE BUTTON 
+
+const deleteBtnCreator = () => {
+    const deleteBtn = document.createElement('button');
+
+    deleteBtn.textContent = "Delete";
+    deleteBtn.className = "delete-btn";
+
+    deleteBtn.addEventListener('click', (e)=>{
+        const item = e.target.parentElement;
+        ol.removeChild(item);
+
+        const items = document.querySelectorAll('li');
+
+        if(items.length === 0){
+            empty.style.display = "block"
+        }
+    });
+    return deleteBtn;
+}
 
 // CLICK EVENT FOR SUBMITING A NEW ITEM IN A TO DO LIST
 
@@ -45,6 +65,7 @@ addBtn.addEventListener("click", (e) => {
 
     // FIND THIS NEW LI AND CHANGE THE INNER HTML TO MATCH WHAT WE HAVE IN THE INPUT FIELD 
     li.innerHTML = input.value
+    li.appendChild(deleteBtnCreator())
 
     // FIND THE ORDERED LIST AND APPEND THE NEW LI WE CREATED 
     ol.appendChild(li)
@@ -52,6 +73,8 @@ addBtn.addEventListener("click", (e) => {
     // CLEAR THE INPUT FIELD FROM ANY TEXT WRITEN 
     input.value = ''
 })
+
+
 
 
 
