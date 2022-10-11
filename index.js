@@ -33,7 +33,7 @@ const markAsDone = (e) => {
     !e.style.backgroundColor ? e.style.backgroundColor = 'red' : e.style.backgroundColor = '' 
 }
 
-// DELETE BUTTON 
+// DELETE BUTTON (edit should be very similar)
 
 const deleteBtnCreator = () => {
     const deleteBtn = document.createElement('button');
