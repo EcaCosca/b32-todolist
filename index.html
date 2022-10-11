@@ -8,22 +8,24 @@
     <link rel="stylesheet" href="./style/style.css">
 </head>
 <body>
-    <!-- HEADER -->
-    <h1 class="title">To Do List</h1>
-
-    <!-- ORDERED LIST  -->
-    <ol id="ordered-list">
-        <li onclick="markAsDone(this)">Todolist</li>
-    </ol>
-
-    <!-- FORM  -->
-    <form>
-        <!-- INPUT  -->
-        <input onChange="handleChange(this.value)" id="input" type="text">
-        <!-- SUBMIT BUTTON  -->
-        <button class="add-btn">Add</button>
-    </form>
-
+    <div class="main-container">
+        <!-- HEADER -->
+        <h1 class="title">To Do List</h1>
+        
+        <!-- ORDERED LIST  -->
+        <ol id="ordered-list">
+            <!-- <li onclick="markAsDone(this)">Todolist</li> -->
+        </ol>
+        
+        <!-- FORM  -->
+        <form>
+            <!-- INPUT  -->
+            <input onChange="handleChange(this.value)" id="input" type="text">
+            <!-- SUBMIT BUTTON  -->
+            <button class="add-btn">Add</button>
+        </form>
+    </div>
+        
 
     <script src="index.js"></script>
 </body>
