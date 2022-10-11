@@ -1,0 +1,29 @@
+.main-container {
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+li {
+    margin: 20px 10px 20px 10px; 
+    width: 300px;
+    /* border: red solid; */
+    /* display: flex; */
+    /* justify-content: flex-start; */
+}
+
+.delete-btn {
+    margin: 3px;
+    background-color: rgb(238, 79, 79);
+    border: none;
+    border-radius: 10px;
+}
+
+.edit-btn {
+    margin: 3px;
+    background-color: rgb(79, 116, 238);
+    border: none;
+    border-radius: 10px;
+}

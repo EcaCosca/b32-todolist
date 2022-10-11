@@ -13,26 +13,6 @@ const handleClick = () => {
 
 h1.addEventListener("click", handleClick)
 
-// ADDING SOMETHING TO THE LIST
-
-const listItemCreator = (text) => {
-    document.getElementById('ordered-list').innerHTML += `<li onclick="markAsDone(this)">${text}</li>`
-}
-
-// CHANGE BACKGROUND OF THIS ITEM SO IT'S MARKED AS DONE OR VICEVERSA
-
-const markAsDone = (e) => { 
-    // IF STATEMENT 
-    // if(!e.style.backgroundColor){
-    //     e.style.backgroundColor = 'red'
-    // }else{
-    //     e.style.backgroundColor = ''
-    // }
-
-    // TERNARY OPERATOR 
-    !e.style.backgroundColor ? e.style.backgroundColor = 'red' : e.style.backgroundColor = '' 
-}
-
 // DELETE BUTTON (edit should be very similar)
 
 const deleteBtnCreator = () => {
@@ -60,7 +40,7 @@ const editBtnCreator = () => {
     const editBtn = document.createElement('button');
 
     editBtn.textContent = "Edit";
-    editBtn.className = "delete-btn";
+    editBtn.className = "edit-btn";
 
     editBtn.addEventListener('click', (e)=>{
         const currentValue = e.target.parentElement.childNodes[0].data;
@@ -89,8 +69,15 @@ addBtn.addEventListener("click", (e) => {
 
     // FIND THIS NEW LI AND CHANGE THE INNER HTML TO MATCH WHAT WE HAVE IN THE INPUT FIELD 
     li.innerHTML = input.value
+    // ADD DELETE BUTTON 
     li.appendChild(deleteBtnCreator())
+    // ADD EDIT BUTTON 
     li.appendChild(editBtnCreator())
+
+    // CHANGE BACKGROUND OF THIS ITEM SO IT'S MARKED AS DONE OR VICEVERSA
+    li.addEventListener('click',(e)=>{
+        !e.target.style.backgroundColor ? e.target.style.backgroundColor = 'red' : e.target.style.backgroundColor = '' 
+    })
 
     // FIND THE ORDERED LIST AND APPEND THE NEW LI WE CREATED 
     ol.appendChild(li)
