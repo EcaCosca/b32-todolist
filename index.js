@@ -13,7 +13,7 @@ const handleClick = () => {
 
 h1.addEventListener("click", handleClick)
 
-// DELETE BUTTON (edit should be very similar)
+// DELETE BUTTON
 
 const deleteBtnCreator = () => {
     const deleteBtn = document.createElement('button');
