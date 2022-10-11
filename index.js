@@ -24,12 +24,6 @@ const deleteBtnCreator = () => {
     deleteBtn.addEventListener('click', (e)=>{
         const item = e.target.parentElement;
         ol.removeChild(item);
-
-        const items = document.querySelectorAll('li');
-
-        if(items.length === 0){
-            empty.style.display = "block"
-        }
     });
     return deleteBtn;
 }
@@ -48,12 +42,6 @@ const editBtnCreator = () => {
 
         const item = e.target.parentElement;
         ol.removeChild(item);
-
-        const items = document.querySelectorAll('li');
-
-        if(items.length === 0){
-            empty.style.display = "block"
-        }
     });
     return editBtn;
 }
