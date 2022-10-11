@@ -8,7 +8,7 @@ const ol = document.querySelector("#ordered-list");
 
 // WHENEVER SOMEONE DOUBLE CLICKS ON THE H1 IT CHANGES COLOR TO WHITE
 const handleClick = () => {
-    h1.style.color = 'white'
+    !h1.style.color ? h1.style.color = 'white' : h1.style.color = ''
 }
 
 h1.addEventListener("click", handleClick)
