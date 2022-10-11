@@ -12,14 +12,14 @@
     <h1>To Do List</h1>
 
     <!-- ORDERED LIST  -->
-    <ol>
+    <ol id="ordered-list">
         <li>Todolist</li>
     </ol>
 
     <!-- FORM  -->
-    <form>
+    <form onSubmit="handleSubmit">
         <!-- INPUT  -->
-        <input type="text">
+        <input onChange="handleChange(this.value)" id="newInput" type="text">
         <!-- SUBMIT BUTTON  -->
         <button>Submit</button>
     </form>
