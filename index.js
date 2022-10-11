@@ -63,6 +63,12 @@ const editBtnCreator = () => {
 addBtn.addEventListener("click", (e) => {
     // PREVENT THE FORM FROM RELOADING THE PAGE 
     e.preventDefault();
+
+    // PREVENT THE FUNCTION FROM HAPPENING IF THE INPUT FIELD IS EMPTY 
+    if(!input.value){
+        alert("Input fields cannot be empty");
+        return;
+    }
     
     // CREATE A NEW LI ELEMENT INSIDE OF THIS FUNCTION 
     const li = document.createElement("li")
