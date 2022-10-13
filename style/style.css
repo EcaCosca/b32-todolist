@@ -9,9 +9,6 @@
 li {
     margin: 20px 10px 20px 10px; 
     width: 300px;
-    /* border: red solid; */
-    /* display: flex; */
-    /* justify-content: flex-start; */
 }
 
 .delete-btn {

@@ -14,7 +14,6 @@ const handleClick = () => {
 h1.addEventListener("click", handleClick)
 
 // DELETE BUTTON
-
 const deleteBtnCreator = () => {
     const deleteBtn = document.createElement('button');
 
@@ -37,7 +36,9 @@ const editBtnCreator = () => {
     editBtn.className = "edit-btn";
 
     editBtn.addEventListener('click', (e)=>{
+        // FINDS THE CURRENT VALUE STORED INSDIE OF THE PARENT ELEMENT TEXT 
         const currentValue = e.target.parentElement.childNodes[0].data;
+        // ASIGN THIS TEXT TO THE INPUT FIELD 
         input.value = currentValue
 
         const item = e.target.parentElement;
@@ -60,7 +61,6 @@ addBtn.addEventListener("click", (e) => {
     
     // CREATE A NEW LI ELEMENT INSIDE OF THIS FUNCTION 
     const li = document.createElement("li")
-
     // FIND THIS NEW LI AND CHANGE THE INNER HTML TO MATCH WHAT WE HAVE IN THE INPUT FIELD 
     li.innerHTML = input.value
     // ADD DELETE BUTTON 
